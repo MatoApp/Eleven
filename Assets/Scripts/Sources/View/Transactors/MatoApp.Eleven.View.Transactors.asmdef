@@ -1,0 +1,24 @@
+{
+    "name": "MatoApp.Eleven.View.Transactors",
+    "rootNamespace": "MatoApp.Eleven.View",
+    "references": [
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:150f5c08c8307404b8415bbb62311354",
+        "GUID:11a83ce92e4754dc396faef19d727c3c",
+        "GUID:a3be28e6428624b11936646f57390e2d",
+        "GUID:606d943fc4f6144e1871c651d5c2eaa5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

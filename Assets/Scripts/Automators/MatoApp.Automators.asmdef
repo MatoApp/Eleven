@@ -1,0 +1,16 @@
+{
+    "name": "MatoApp.Automators",
+    "rootNamespace": "MatoApp.Automators",
+    "references": [
+        "GUID:606d943fc4f6144e1871c651d5c2eaa5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
