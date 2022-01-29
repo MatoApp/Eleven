@@ -24,7 +24,7 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [UnityTest]
-        public IEnumerator _01_Connectが呼ばれたらNetworkに接続後OnConnectedを発行() => UniTask.ToCoroutine(async () =>
+        public IEnumerator _01_Connectが呼ばれたらNetworkに接続後OnConnectedを発行する() => UniTask.ToCoroutine(async () =>
         {
             ConnectionManager.Initialize();
 
@@ -33,16 +33,13 @@ namespace MatoApp.Eleven.Network.Tests
 
             ConnectionManager.Connect();
 
-            var isConnected = await ConnectionManager
-                .OnConnected
-                .Select(_ => true)
-                .ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
+            await ConnectionManager.OnConnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
-            Assert.AreEqual(true, isConnected);
+            Assert.AreEqual(true, true);
         });
 
         [UnityTest]
-        public IEnumerator _01_DisConnectが呼ばれたらNetworkを切断後OnDisconnectedを発行() => UniTask.ToCoroutine(async () =>
+        public IEnumerator _01_Disconnectが呼ばれたらNetworkを切断後OnDisconnectedを発行する() => UniTask.ToCoroutine(async () =>
         {
             ConnectionManager.Initialize();
 
@@ -51,12 +48,9 @@ namespace MatoApp.Eleven.Network.Tests
 
             ConnectionManager.Disconnect();
 
-            var isDisconnected = await ConnectionManager
-                .OnDisconnected
-                .Select(_ => true)
-                .ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
+            await ConnectionManager.OnDisconnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
-            Assert.AreEqual(true, isDisconnected);
+            Assert.AreEqual(true, true);
         });
     }
 }

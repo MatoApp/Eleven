@@ -36,7 +36,7 @@ namespace MatoApp.Eleven.View.Tests
         }
 
         [Test]
-        public void _01_Connectionが確立された()
+        public void _01_Connectionが確立されたらLobbySceneをLoadする()
         {
             ConnectionStateObserver.Initialize();
 

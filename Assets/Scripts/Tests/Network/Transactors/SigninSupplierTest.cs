@@ -29,7 +29,7 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [Test]
-        public void _01_Signinが呼ばれた()
+        public void _01_Signinが呼ばれたらConnectionManagerのConnectを実行する()
         {
             SigninSupplier.Signin();
 
@@ -37,7 +37,7 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [Test]
-        public void _02_SetUsernameが呼ばれた()
+        public void _02_SetUsernameが呼ばれたらUserInfoRepositoryのUsernameにsetする()
         {
             SigninSupplier.SetUsername("username");
 

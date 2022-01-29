@@ -36,7 +36,7 @@ namespace MatoApp.Eleven.View.Tests
         }
 
         [Test]
-        public void _01_Usernameが入力されている状態でSigninButtonが押された()
+        public void _01_Usernameが入力されている状態でSigninButtonが押されたらSigninをRequestする()
         {
             SigninRequester.Initialize();
 
@@ -48,7 +48,7 @@ namespace MatoApp.Eleven.View.Tests
         }
 
         [Test]
-        public void _02_Usernameが空の状態でSigninButtonが押された()
+        public void _02_Usernameが空の状態でSigninButtonが押されたらSigninをRequestしない()
         {
             SigninRequester.Initialize();
 

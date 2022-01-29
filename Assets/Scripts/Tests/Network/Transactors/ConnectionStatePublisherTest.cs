@@ -26,7 +26,7 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [Test]
-        public void _01_OnConnectedが呼ばれた()
+        public void _01_OnConnectedがgetされたらConnectionManagerのOnConnectedをgetする()
         {
             _ = ConnectionStatePublisher.OnConnected;
 
@@ -34,7 +34,7 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [Test]
-        public void _02_OnDisconnectedが呼ばれた()
+        public void _02_OnDisconnectedがgetされたらConnectionManagerのOnDisconnectedをgetする()
         {
             _ = ConnectionStatePublisher.OnDisconnected;
 
