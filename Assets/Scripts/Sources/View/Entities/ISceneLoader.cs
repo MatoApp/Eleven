@@ -4,6 +4,6 @@ namespace MatoApp.Eleven.View
 {
     public interface ISceneLoader
     {
-        UniTask LoadSceneAsync(Scene scene);
+        UniTask LoadScene(Scene scene);
     }
 }

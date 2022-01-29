@@ -42,7 +42,7 @@ namespace MatoApp.Eleven.View.Tests
 
             OnConnectedSubject.OnNext(default);
 
-            SceneLoader.Received().LoadSceneAsync(Scene.Lobby);
+            SceneLoader.Received().LoadScene(Scene.Lobby);
         }
     }
 }

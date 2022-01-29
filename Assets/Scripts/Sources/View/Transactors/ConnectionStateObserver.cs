@@ -29,7 +29,7 @@ namespace MatoApp.Eleven.View
                 .OnConnected
                 .Subscribe(async _ =>
                 {
-                    await SceneLoader.LoadSceneAsync(Scene.Lobby);
+                    await SceneLoader.LoadScene(Scene.Lobby);
                 });
         }
     }

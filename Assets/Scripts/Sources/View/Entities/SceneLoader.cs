@@ -9,9 +9,9 @@ namespace MatoApp.Eleven.View
     /// </summary>
     internal class SceneLoader : ISceneLoader
     {
-        public async UniTask LoadSceneAsync(Scene scene)
+        public async UniTask LoadScene(Scene scene)
         {
-            await SceneManager.LoadSceneAsync(scene.ToString());
+            await SceneManager.LoadSceneAsync($"{scene}Scene");
         }
     }
 }
