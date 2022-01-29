@@ -1,18 +1,15 @@
 {
-    "name": "MatoApp.Eleven.Network.Tests",
+    "name": "MatoApp.Eleven.Network.Entities.Tests",
     "rootNamespace": "MatoApp.Eleven.Network.Tests",
     "references": [
-        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
         "UniRx",
         "UniTask",
         "MatoApp.Eleven.Network.Transactors",
         "MatoApp.Eleven.Network.Entities",
-        "MatoApp.Eleven.Model.Transactors",
         "MatoApp.Utilities"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

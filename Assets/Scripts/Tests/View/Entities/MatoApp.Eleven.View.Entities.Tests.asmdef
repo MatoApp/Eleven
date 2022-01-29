@@ -1,17 +1,15 @@
 {
-    "name": "MatoApp.Eleven.Model.Tests",
-    "rootNamespace": "MatoApp.Eleven.Model.Tests",
+    "name": "MatoApp.Eleven.View.Entities.Tests",
+    "rootNamespace": "MatoApp.Eleven.View.Tests",
     "references": [
-        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
         "UniRx",
         "UniTask",
-        "MatoApp.Eleven.Model.Entities",
-        "MatoApp.Eleven.Model.Transactors",
+        "MatoApp.Eleven.View.Entities",
+        "MatoApp.Eleven.View.Transactors",
         "MatoApp.Utilities"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

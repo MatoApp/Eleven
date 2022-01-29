@@ -1,0 +1,32 @@
+{
+    "name": "MatoApp.Eleven.View.Transactors.Tests",
+    "rootNamespace": "MatoApp.Eleven.View.Tests",
+    "references": [
+        "UnityEditor.TestRunner",
+        "UniRx",
+        "UniTask",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "MatoApp.Eleven.View.Entities",
+        "MatoApp.Eleven.View.Transactors",
+        "MatoApp.Eleven.Model.Transactors",
+        "MatoApp.Eleven.Network.Transactors",
+        "MatoApp.Utilities"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
