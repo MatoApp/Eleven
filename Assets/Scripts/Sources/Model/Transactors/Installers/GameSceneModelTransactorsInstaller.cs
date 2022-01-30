@@ -1,7 +1,7 @@
 using Zenject;
 using MatoApp.Utilities;
 
-namespace MatoApp.Eleven.Network
+namespace MatoApp.Eleven.Model
 {
     /// <summary>
     /// GameSceneのModelTransactorを各オブジェクトにInstallするクラス
