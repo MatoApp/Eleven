@@ -39,7 +39,7 @@ namespace MatoApp.Eleven.Network.Tests
         });
 
         [UnityTest]
-        public IEnumerator _01_Disconnectが呼ばれたらNetworkを切断後OnDisconnectedを発行する() => UniTask.ToCoroutine(async () =>
+        public IEnumerator _02_Disconnectが呼ばれたらNetworkを切断後OnDisconnectedを発行する() => UniTask.ToCoroutine(async () =>
         {
             ConnectionManager.Initialize();
 
