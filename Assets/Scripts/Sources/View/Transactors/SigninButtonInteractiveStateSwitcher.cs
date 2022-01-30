@@ -6,14 +6,14 @@ using MatoApp.Utilities;
 
 namespace MatoApp.Eleven.View
 {
-    internal class SigninButtonActiveStateSwitcher : IInitializable
+    internal class SigninButtonInteractiveStateSwitcher : IInitializable
     {
         public TMP_InputField UsernameInputField { private get; init; }
         public Button SigninButton { private get; init; }
 
-        public SigninButtonActiveStateSwitcher() { }
+        public SigninButtonInteractiveStateSwitcher() { }
         [Inject]
-        public SigninButtonActiveStateSwitcher(
+        public SigninButtonInteractiveStateSwitcher(
             [Inject(Id = TitleSceneViewEntity.UsernameInputField)] TMP_InputField usernameInputField,
             [Inject(Id = TitleSceneViewEntity.SigninButton)] Button signinButton)
         {

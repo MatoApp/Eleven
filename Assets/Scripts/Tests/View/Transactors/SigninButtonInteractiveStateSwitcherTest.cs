@@ -7,9 +7,9 @@ using Assert = UnityEngine.Assertions.Assert;
 
 namespace MatoApp.Eleven.View.Tests
 {
-    internal class SigninButtonActiveStateSwitcherTest
+    internal class SigninButtonInteractiveStateSwitcherTest
     {
-        private SigninButtonActiveStateSwitcher SigninButtonActiveStateSwitcher { get; set; }
+        private SigninButtonInteractiveStateSwitcher SigninButtonInteractiveStateSwitcher { get; set; }
 
         private TMP_InputField UsernameInputField { get; set; }
         private Button SigninButton { get; set; }
@@ -25,7 +25,7 @@ namespace MatoApp.Eleven.View.Tests
             SigninButton = new GameObject()
                 .AddComponent<Button>();
 
-            SigninButtonActiveStateSwitcher = new()
+            SigninButtonInteractiveStateSwitcher = new()
             {
                 UsernameInputField = UsernameInputField,
                 SigninButton = SigninButton,
@@ -35,7 +35,7 @@ namespace MatoApp.Eleven.View.Tests
         [Test]
         public void _01_Usernameが入力されていたらSigninButtonが有効になる()
         {
-            SigninButtonActiveStateSwitcher.Initialize();
+            SigninButtonInteractiveStateSwitcher.Initialize();
 
             UsernameInputField.onValueChanged.Invoke("username");
             Assert.AreEqual(true, SigninButton.interactable);
@@ -44,7 +44,7 @@ namespace MatoApp.Eleven.View.Tests
         [Test]
         public void _02_Usernameが入力されていなかったらSigninButtonが無効になる()
         {
-            SigninButtonActiveStateSwitcher.Initialize();
+            SigninButtonInteractiveStateSwitcher.Initialize();
 
             UsernameInputField.onValueChanged.Invoke("");
             Assert.AreEqual(false, SigninButton.interactable);
