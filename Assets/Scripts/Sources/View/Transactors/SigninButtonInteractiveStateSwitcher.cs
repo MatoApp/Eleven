@@ -6,6 +6,9 @@ using MatoApp.Utilities;
 
 namespace MatoApp.Eleven.View
 {
+    /// <summary>
+    /// Usernameの入力状態に応じてSigninButtonの有効無効を切り替えるクラス
+    /// </summary>
     internal class SigninButtonInteractiveStateSwitcher : IInitializable
     {
         public Button SigninButton { private get; init; }
