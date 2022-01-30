@@ -14,8 +14,8 @@ namespace MatoApp.Eleven.View.Tests
         private SigninRequester SigninRequester { get; set; }
 
         private ISigninSupplier SigninSupplier { get; set; }
-        private TMP_InputField UsernameInputField { get; set; }
         private Button SigninButton { get; set; }
+        private TMP_InputField UsernameInputField { get; set; }
 
         [OneTimeSetUp]
         public void Initialize() { }
@@ -24,14 +24,14 @@ namespace MatoApp.Eleven.View.Tests
         public void SetUp()
         {
             SigninSupplier = Substitute.For<ISigninSupplier>();
-            UsernameInputField = new GameObject().AddComponent<TMP_InputField>();
             SigninButton = new GameObject().AddComponent<Button>();
+            UsernameInputField = new GameObject().AddComponent<TMP_InputField>();         
 
             SigninRequester = new()
             {
                 SigninSupplier = SigninSupplier,
+                SigninButton = SigninButton,
                 UsernameInputField = UsernameInputField,
-                SigninButton = SigninButton
             };
         }
 

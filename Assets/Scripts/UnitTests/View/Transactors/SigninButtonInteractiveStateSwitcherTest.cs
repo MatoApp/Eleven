@@ -11,8 +11,8 @@ namespace MatoApp.Eleven.View.Tests
     {
         private SigninButtonInteractiveStateSwitcher SigninButtonInteractiveStateSwitcher { get; set; }
 
-        private TMP_InputField UsernameInputField { get; set; }
         private Button SigninButton { get; set; }
+        private TMP_InputField UsernameInputField { get; set; }
 
         [OneTimeSetUp]
         public void Initialize() { }
@@ -20,15 +20,15 @@ namespace MatoApp.Eleven.View.Tests
         [SetUp]
         public void SetUp()
         {
-            UsernameInputField = new GameObject()
-                .AddComponent<TMP_InputField>();
             SigninButton = new GameObject()
                 .AddComponent<Button>();
+            UsernameInputField = new GameObject()
+                .AddComponent<TMP_InputField>();
 
             SigninButtonInteractiveStateSwitcher = new()
             {
-                UsernameInputField = UsernameInputField,
                 SigninButton = SigninButton,
+                UsernameInputField = UsernameInputField,
             };
         }
 
