@@ -1,9 +1,11 @@
-using Cysharp.Threading.Tasks;
+using System;
 
 namespace MatoApp.Eleven.View
 {
     public interface ISceneLoader
     {
-        UniTask LoadScene(Scene scene);
+        void LoadScene(Scene scene);
+
+        IObservable<Scene> OnSceneLoaded { get; }
     }
 }

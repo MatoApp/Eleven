@@ -27,9 +27,9 @@ namespace MatoApp.Eleven.View
         {
             ConnectionStatePublisher
                 .OnConnected
-                .Subscribe(async _ =>
+                .Subscribe(_ =>
                 {
-                    await SceneLoader.LoadScene(Scene.Lobby);
+                    SceneLoader.LoadScene(Scene.Lobby);
                 });
         }
     }

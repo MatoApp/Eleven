@@ -1,3 +1,4 @@
+using System;
 using UniRx;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
@@ -9,9 +10,14 @@ namespace MatoApp.Eleven.View
     /// </summary>
     internal class SceneLoader : ISceneLoader
     {
-        public async UniTask LoadScene(Scene scene)
+        private Subject<Scene> OnSceneLoadedSubject { get; } = new();
+
+        public IObservable<Scene> OnSceneLoaded => OnSceneLoadedSubject.AsObservable();
+
+        public async void LoadScene(Scene scene)
         {
-            await SceneManager.LoadSceneAsync($"{scene}Scene");
+            await SceneManager.LoadSceneAsync(scene.GetName()).ToUniTask();
+            OnSceneLoadedSubject.OnNext(scene);
         }
     }
 }
