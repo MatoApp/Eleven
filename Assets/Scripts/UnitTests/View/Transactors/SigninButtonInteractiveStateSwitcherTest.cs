@@ -37,7 +37,7 @@ namespace MatoApp.Eleven.View.Tests
         {
             SigninButtonInteractiveStateSwitcher.Initialize();
 
-            UsernameInputField.onValueChanged.Invoke("username");
+            UsernameInputField.text = "username";
             Assert.AreEqual(true, SigninButton.interactable);
         }
 
@@ -46,7 +46,7 @@ namespace MatoApp.Eleven.View.Tests
         {
             SigninButtonInteractiveStateSwitcher.Initialize();
 
-            UsernameInputField.onValueChanged.Invoke("");
+            UsernameInputField.text = "";
             Assert.AreEqual(false, SigninButton.interactable);
         }
     }
