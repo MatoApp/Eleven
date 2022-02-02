@@ -14,10 +14,10 @@ namespace MatoApp.Eleven.Network
     internal class ConnectionManager : IConnectionManager, IConnectionCallbacks, IInitializable
     {
         private Subject<Unit> OnConnectedSubject { get; } = new();
-        private Subject<string> OnDisconnectedSubject { get; } = new();
+        private Subject<DisconnectCause> OnDisconnectedSubject { get; } = new();
 
         public IObservable<Unit> OnConnected => OnConnectedSubject.AsObservable();
-        public IObservable<string> OnDisconnected => OnDisconnectedSubject.AsObservable();
+        public IObservable<DisconnectCause> OnDisconnected => OnDisconnectedSubject.AsObservable();
 
         public void Initialize()
         {
@@ -38,9 +38,17 @@ namespace MatoApp.Eleven.Network
         {
             OnConnectedSubject.OnNext(Unit.Default);
         }
-        void IConnectionCallbacks.OnDisconnected(DisconnectCause cause)
+        void IConnectionCallbacks.OnDisconnected(Photon.Realtime.DisconnectCause photonCause)
         {
-            OnDisconnectedSubject.OnNext(cause.ToString());
+            var cause = photonCause switch
+            {
+                Photon.Realtime.DisconnectCause.None => DisconnectCause.None,
+                Photon.Realtime.DisconnectCause.ServerTimeout or
+                Photon.Realtime.DisconnectCause.ClientTimeout => DisconnectCause.Timeout,
+                _ => DisconnectCause.Exception,
+            };
+
+            OnDisconnectedSubject.OnNext(cause);
         }
         void IConnectionCallbacks.OnRegionListReceived(RegionHandler regionHandler) { }
         void IConnectionCallbacks.OnCustomAuthenticationFailed(string debugMessage) { }

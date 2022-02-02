@@ -21,6 +21,6 @@ namespace MatoApp.Eleven.Network
         }
 
         public IObservable<Unit> OnConnected => ConnectionManager.OnConnected;
-        public IObservable<string> OnDisconnected => ConnectionManager.OnDisconnected;
+        public IObservable<DisconnectCause> OnDisconnected => ConnectionManager.OnDisconnected;
     }
 }

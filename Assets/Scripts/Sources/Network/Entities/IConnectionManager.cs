@@ -9,6 +9,6 @@ namespace MatoApp.Eleven.Network
         void Disconnect();
 
         IObservable<Unit> OnConnected { get; }
-        IObservable<string> OnDisconnected { get; }
+        IObservable<DisconnectCause> OnDisconnected { get; }
     }
 }
