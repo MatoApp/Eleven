@@ -6,7 +6,7 @@
         "UniRx",
         "UniTask",
         "MatoApp.Eleven.View.Entities",
-        "MatoApp.Eleven.View.Transactors",
+        "MatoApp.Eleven.View.Utilities",
         "MatoApp.Utilities"
     ],
     "includePlatforms": [],

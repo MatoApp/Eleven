@@ -5,8 +5,9 @@
         "UnityEditor.TestRunner",
         "UniRx",
         "UniTask",
-        "MatoApp.Eleven.Network.Transactors",
         "MatoApp.Eleven.Network.Entities",
+        "MatoApp.Eleven.Network.Transactors",
+        "MatoApp.Eleven.Network.Utilities",
         "MatoApp.Eleven.Model.Transactors",
         "MatoApp.Utilities"
     ],

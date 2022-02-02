@@ -9,6 +9,7 @@
         "Unity.TextMeshPro",
         "MatoApp.Eleven.View.Entities",
         "MatoApp.Eleven.View.Transactors",
+        "MatoApp.Eleven.View.Utilities",
         "MatoApp.Eleven.Model.Transactors",
         "MatoApp.Eleven.Network.Transactors",
         "MatoApp.Utilities"

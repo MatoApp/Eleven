@@ -29,7 +29,7 @@ MonoBehaviour:
       Data: Scene
     - Name: ExportFilePath
       Entry: 1
-      Data: Assets/Scripts/Sources/View/Entities/Scene.cs
+      Data: Assets/Scripts/Sources/View/Utilities/Scene.cs
     - Name: EscapePattern
       Entry: 1
       Data: ' _()'

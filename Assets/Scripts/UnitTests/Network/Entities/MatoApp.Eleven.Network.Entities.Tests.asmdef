@@ -5,8 +5,8 @@
         "UnityEngine.TestRunner",
         "UniRx",
         "UniTask",
-        "MatoApp.Eleven.Network.Transactors",
         "MatoApp.Eleven.Network.Entities",
+        "MatoApp.Eleven.Network.Utilities",
         "MatoApp.Utilities"
     ],
     "includePlatforms": [],
