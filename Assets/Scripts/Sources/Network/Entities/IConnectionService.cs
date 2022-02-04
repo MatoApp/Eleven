@@ -3,7 +3,7 @@ using UniRx;
 
 namespace MatoApp.Eleven.Network
 {
-    public interface IConnectionManager
+    public interface IConnectionService
     {
         void Connect();
         void Disconnect();

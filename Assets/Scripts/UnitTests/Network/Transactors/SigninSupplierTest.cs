@@ -9,7 +9,7 @@ namespace MatoApp.Eleven.Network.Tests
     {
         private SigninSupplier SigninSupplier { get; set; }
 
-        private IConnectionManager ConnectionManager { get; set; }
+        private IConnectionService ConnectionService { get; set; }
         private IUserInfoRepository UserInfoRepository { get; set; }
 
         [OneTimeSetUp]
@@ -18,12 +18,12 @@ namespace MatoApp.Eleven.Network.Tests
         [SetUp]
         public void SetUp()
         {
-            ConnectionManager = Substitute.For<IConnectionManager>();
+            ConnectionService = Substitute.For<IConnectionService>();
             UserInfoRepository = Substitute.For<IUserInfoRepository>();
 
             SigninSupplier = new()
             {
-                ConnectionManager = ConnectionManager,
+                ConnectionService = ConnectionService,
                 UserInfoRepository = UserInfoRepository
             };
         }
@@ -33,7 +33,7 @@ namespace MatoApp.Eleven.Network.Tests
         {
             SigninSupplier.Signin();
 
-            ConnectionManager.Received().Connect();
+            ConnectionService.Received().Connect();
         }
 
         [Test]

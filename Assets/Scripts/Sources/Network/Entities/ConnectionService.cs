@@ -9,9 +9,9 @@ using MatoApp.Utilities;
 namespace MatoApp.Eleven.Network
 {
     /// <summary>
-    /// Networkへの接続を管理するクラス
+    /// Networkへの接続を提供するクラス
     /// </summary>
-    internal class ConnectionManager : IConnectionManager, IConnectionCallbacks, IInitializable
+    internal class ConnectionService : IConnectionService, IConnectionCallbacks, IInitializable
     {
         private Subject<Unit> OnConnectedSubject { get; } = new();
         private Subject<DisconnectCause> OnDisconnectedSubject { get; } = new();

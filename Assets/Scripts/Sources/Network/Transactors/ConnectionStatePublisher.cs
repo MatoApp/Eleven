@@ -10,17 +10,17 @@ namespace MatoApp.Eleven.Network
     /// </summary>
     internal class ConnectionStatePublisher : IConnectionStatePublisher
     {
-        public IConnectionManager ConnectionManager { private get; init; }
+        public IConnectionService ConnectionService { private get; init; }
 
         public ConnectionStatePublisher() { }
         [Inject]
         public ConnectionStatePublisher(
-            [Inject] IConnectionManager connectionManager)
+            [Inject] IConnectionService connectionService)
         {
-            ConnectionManager = connectionManager;
+            ConnectionService = connectionService;
         }
 
-        public IObservable<Unit> OnConnected => ConnectionManager.OnConnected;
-        public IObservable<DisconnectCause> OnDisconnected => ConnectionManager.OnDisconnected;
+        public IObservable<Unit> OnConnected => ConnectionService.OnConnected;
+        public IObservable<DisconnectCause> OnDisconnected => ConnectionService.OnDisconnected;
     }
 }

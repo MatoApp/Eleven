@@ -11,7 +11,7 @@ namespace MatoApp.Eleven.Network
         public override void InstallBindings()
         {
             Container
-                .BindInterfacesTo<ConnectionManager>()
+                .BindInterfacesTo<ConnectionService>()
                 .AsSingle();
 
             Container

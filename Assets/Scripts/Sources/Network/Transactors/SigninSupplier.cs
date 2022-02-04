@@ -9,22 +9,22 @@ namespace MatoApp.Eleven.Network
     /// </summary>
     internal class SigninSupplier : ISigninSupplier
     {
-        public IConnectionManager ConnectionManager { private get; init; }
+        public IConnectionService ConnectionService { private get; init; }
         public IUserInfoRepository UserInfoRepository { private get; init; }
 
         public SigninSupplier() { }
         [Inject]
         public SigninSupplier(
-            [Inject] IConnectionManager connectionManager,
+            [Inject] IConnectionService connectionService,
             [Inject] IUserInfoRepository userInfoRepository)
         {
-            ConnectionManager = connectionManager;
+            ConnectionService = connectionService;
             UserInfoRepository = userInfoRepository;
         }
 
         public void Signin()
         {
-            ConnectionManager.Connect();
+            ConnectionService.Connect();
         }
 
         public void SetUsername(string username)

@@ -10,9 +10,9 @@ using Assert = UnityEngine.Assertions.Assert;
 
 namespace MatoApp.Eleven.Network.Tests
 {
-    internal class ConnectionManagerTest
+    internal class ConnectionServiceTest
     {
-        private ConnectionManager ConnectionManager { get; set; }
+        private ConnectionService ConnectionService { get; set; }
 
         [OneTimeSetUp]
         public void Initialize() { }
@@ -20,20 +20,20 @@ namespace MatoApp.Eleven.Network.Tests
         [SetUp]
         public void SetUp()
         {
-            ConnectionManager = new();
+            ConnectionService = new();
         }
 
         [UnityTest]
         public IEnumerator _01_Connectが呼ばれたらNetworkに接続後OnConnectedを発行する() => UniTask.ToCoroutine(async () =>
         {
-            ConnectionManager.Initialize();
+            ConnectionService.Initialize();
 
             var cts = new CancellationTokenSource();
             cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
 
-            ConnectionManager.Connect();
+            ConnectionService.Connect();
 
-            await ConnectionManager.OnConnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
+            await ConnectionService.OnConnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual(true, true);
         });
@@ -41,14 +41,14 @@ namespace MatoApp.Eleven.Network.Tests
         [UnityTest]
         public IEnumerator _02_Disconnectが呼ばれたらNetworkを切断後OnDisconnectedを発行する() => UniTask.ToCoroutine(async () =>
         {
-            ConnectionManager.Initialize();
+            ConnectionService.Initialize();
 
             var cts = new CancellationTokenSource();
             cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
 
-            ConnectionManager.Disconnect();
+            ConnectionService.Disconnect();
 
-            await ConnectionManager.OnDisconnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
+            await ConnectionService.OnDisconnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual(true, true);
         });

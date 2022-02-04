@@ -9,7 +9,7 @@ namespace MatoApp.Eleven.Network.Tests
     {
         private ConnectionStatePublisher ConnectionStatePublisher { get; set; }
 
-        private IConnectionManager ConnectionManager { get; set; }
+        private IConnectionService ConnectionService { get; set; }
 
         [OneTimeSetUp]
         public void Initialize() { }
@@ -17,11 +17,11 @@ namespace MatoApp.Eleven.Network.Tests
         [SetUp]
         public void SetUp()
         {
-            ConnectionManager = Substitute.For<IConnectionManager>();
+            ConnectionService = Substitute.For<IConnectionService> ();
 
             ConnectionStatePublisher = new()
             {
-                ConnectionManager = ConnectionManager,
+                ConnectionService = ConnectionService,
             };
         }
 
@@ -30,7 +30,7 @@ namespace MatoApp.Eleven.Network.Tests
         {
             _ = ConnectionStatePublisher.OnConnected;
 
-            _ = ConnectionManager.Received().OnConnected;
+            _ = ConnectionService.Received().OnConnected;
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace MatoApp.Eleven.Network.Tests
         {
             _ = ConnectionStatePublisher.OnDisconnected;
 
-            _ = ConnectionManager.Received().OnDisconnected;
+            _ = ConnectionService.Received().OnDisconnected;
         }
     }
 }
