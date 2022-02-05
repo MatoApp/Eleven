@@ -6,7 +6,7 @@ namespace MatoApp.Eleven.Network
     public enum DisconnectCause
     {
         None,
-        Exception,
+        ExceptionOccurred,
         Timeout,
         MaxUserReached,
     }
