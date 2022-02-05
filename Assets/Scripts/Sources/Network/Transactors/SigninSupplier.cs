@@ -22,14 +22,10 @@ namespace MatoApp.Eleven.Network
             UserInfoRepository = userInfoRepository;
         }
 
-        public void Signin()
-        {
-            ConnectionService.Connect();
-        }
-
-        public void SetUsername(string username)
+        public void Signin(string username)
         {
             UserInfoRepository.Username = username;
+            ConnectionService.Connect();
         }
     }
 }

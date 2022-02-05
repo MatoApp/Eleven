@@ -29,19 +29,12 @@ namespace MatoApp.Eleven.Network.Tests
         }
 
         [Test]
-        public void _01_Signinが呼ばれたらConnectionManagerのConnectを実行する()
+        public void _01_Signinが呼ばれたらUsernameをsetしてConnectを実行する()
         {
-            SigninSupplier.Signin();
-
-            ConnectionService.Received().Connect();
-        }
-
-        [Test]
-        public void _02_SetUsernameが呼ばれたらUserInfoRepositoryのUsernameにsetする()
-        {
-            SigninSupplier.SetUsername("username");
+            SigninSupplier.Signin("username");
 
             UserInfoRepository.Received().Username = "username";
+            ConnectionService.Received().Connect();
         }
     }
 }

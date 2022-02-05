@@ -43,8 +43,7 @@ namespace MatoApp.Eleven.View.Tests
             UsernameInputField.text = "username";
             SigninButton.onClick.Invoke();
 
-            SigninSupplier.Received().SetUsername("username");
-            SigninSupplier.Received().Signin();
+            SigninSupplier.Received().Signin("username");
         }
 
         [Test]
@@ -55,8 +54,7 @@ namespace MatoApp.Eleven.View.Tests
             UsernameInputField.text = "";
             SigninButton.onClick.Invoke();
 
-            SigninSupplier.DidNotReceiveWithAnyArgs().SetUsername(default);
-            SigninSupplier.DidNotReceive().Signin();
+            SigninSupplier.DidNotReceiveWithAnyArgs().Signin(default);
         }
     }
 }

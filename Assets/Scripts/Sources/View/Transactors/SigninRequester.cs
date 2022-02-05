@@ -37,8 +37,7 @@ namespace MatoApp.Eleven.View
                 .Where(_ => UsernameInputField.text != string.Empty)
                 .Subscribe(_ =>
                 {
-                    SigninSupplier.SetUsername(UsernameInputField.text);
-                    SigninSupplier.Signin();
+                    SigninSupplier.Signin(username: UsernameInputField.text);
                 });
         }
     }
