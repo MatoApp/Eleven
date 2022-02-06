@@ -20,10 +20,8 @@ namespace MatoApp.Eleven.View.Tests
         [SetUp]
         public void SetUp()
         {
-            SigninButton = new GameObject()
-                .AddComponent<Button>();
-            UsernameInputField = new GameObject()
-                .AddComponent<TMP_InputField>();
+            SigninButton = new GameObject().AddComponent<Button>();
+            UsernameInputField = new GameObject().AddComponent<TMP_InputField>();
 
             SigninButtonInteractiveStateSwitcher = new()
             {
@@ -38,6 +36,7 @@ namespace MatoApp.Eleven.View.Tests
             SigninButtonInteractiveStateSwitcher.Initialize();
 
             UsernameInputField.text = "username";
+
             Assert.AreEqual(true, SigninButton.interactable);
         }
 
@@ -47,6 +46,7 @@ namespace MatoApp.Eleven.View.Tests
             SigninButtonInteractiveStateSwitcher.Initialize();
 
             UsernameInputField.text = "";
+
             Assert.AreEqual(false, SigninButton.interactable);
         }
     }

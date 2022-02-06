@@ -19,6 +19,10 @@ namespace MatoApp.Eleven.Network.Tests
         [Test]
         public void _01_Usernameにsetした値とgetした値が等しい()
         {
+            UserInfoRepository.Username = "name";
+
+            Assert.AreEqual("name", UserInfoRepository.Username);
+
             UserInfoRepository.Username = "username";
 
             Assert.AreEqual("username", UserInfoRepository.Username);

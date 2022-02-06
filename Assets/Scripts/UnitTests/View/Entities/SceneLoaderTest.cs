@@ -26,11 +26,10 @@ namespace MatoApp.Eleven.View.Tests
         [UnityTest]
         public IEnumerator _01_LoadSceneが呼ばれたらSceneManagementのLoadSceneAsyncを実行する() => UniTask.ToCoroutine(async () =>
         {
-            var cts = new CancellationTokenSource();
-            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
-
             SceneLoader.LoadScene(Scene.Lobby);
 
+            var cts = new CancellationTokenSource();
+            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
             await SceneLoader.OnSceneLoaded.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual(true, true);

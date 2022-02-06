@@ -25,10 +25,8 @@ namespace MatoApp.Eleven.Tests
         {
             await LoadScene(Scene.Title.GetName());
 
-            SigninButton = new GameObject()
-                .AddComponent<Button>();
-            UsernameInputField = new GameObject()
-                .AddComponent<TMP_InputField>();
+            SigninButton = new GameObject().AddComponent<Button>();
+            UsernameInputField = new GameObject().AddComponent<TMP_InputField>();
 
             SigninButton = SceneContainer.ResolveId<Button>(TitleSceneViewEntity.SigninButton);
             UsernameInputField = SceneContainer.ResolveId<TMP_InputField>(TitleSceneViewEntity.UsernameInputField);
@@ -39,6 +37,7 @@ namespace MatoApp.Eleven.Tests
             Assert.IsNotNull(SceneLoader);
 
             PhotonNetwork.NickName = "";
+
             Assert.AreNotEqual("username", PhotonNetwork.NickName);
 
             UsernameInputField.text = "username";
@@ -49,6 +48,35 @@ namespace MatoApp.Eleven.Tests
             await SceneLoader.OnSceneLoaded.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual("username", PhotonNetwork.NickName);
+        });
+
+        [UnityTest]
+        public IEnumerator _02_Usernameが入力されていたらSigninButtonが有効になり入力されていなかったら無効になる() => UniTask.ToCoroutine(async () =>
+        {
+            await LoadScene(Scene.Title.GetName());
+
+            SigninButton = new GameObject().AddComponent<Button>();
+            UsernameInputField = new GameObject().AddComponent<TMP_InputField>();
+
+            SigninButton = SceneContainer.ResolveId<Button>(TitleSceneViewEntity.SigninButton);
+            UsernameInputField = SceneContainer.ResolveId<TMP_InputField>(TitleSceneViewEntity.UsernameInputField);
+
+            Assert.IsNotNull(SigninButton);
+            Assert.IsNotNull(UsernameInputField);
+
+            Assert.AreEqual(false, SigninButton.interactable);
+
+            UsernameInputField.text = "name";
+
+            Assert.AreEqual(true, SigninButton.interactable);
+
+            UsernameInputField.text = "";
+
+            Assert.AreEqual(false, SigninButton.interactable);
+
+            UsernameInputField.text = "username";
+
+            Assert.AreEqual(true, SigninButton.interactable);
         });
     }
 }

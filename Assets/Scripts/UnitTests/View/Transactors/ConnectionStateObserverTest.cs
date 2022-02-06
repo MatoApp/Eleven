@@ -40,7 +40,7 @@ namespace MatoApp.Eleven.View.Tests
         {
             ConnectionStateObserver.Initialize();
 
-            OnConnectedSubject.OnNext(default);
+            OnConnectedSubject.OnNext(Unit.Default);
 
             SceneLoader.Received().LoadScene(Scene.Lobby);
         }

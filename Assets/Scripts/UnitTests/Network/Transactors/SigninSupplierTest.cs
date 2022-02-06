@@ -34,6 +34,7 @@ namespace MatoApp.Eleven.Network.Tests
             SigninSupplier.Signin("username");
 
             UserInfoRepository.Received().Username = "username";
+
             ConnectionService.Received().Connect();
         }
     }

@@ -28,11 +28,10 @@ namespace MatoApp.Eleven.Network.Tests
         {
             ConnectionService.Initialize();
 
-            var cts = new CancellationTokenSource();
-            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
-
             ConnectionService.Connect();
 
+            var cts = new CancellationTokenSource();
+            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
             await ConnectionService.OnConnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual(true, true);
@@ -43,11 +42,10 @@ namespace MatoApp.Eleven.Network.Tests
         {
             ConnectionService.Initialize();
 
-            var cts = new CancellationTokenSource();
-            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
-
             ConnectionService.Disconnect();
 
+            var cts = new CancellationTokenSource();
+            cts.CancelAfterSlim(TimeSpan.FromSeconds(5));
             await ConnectionService.OnDisconnected.ToUniTask(useFirstValue: true, cancellationToken: cts.Token);
 
             Assert.AreEqual(true, true);
