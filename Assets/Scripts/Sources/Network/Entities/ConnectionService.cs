@@ -45,7 +45,7 @@ namespace MatoApp.Eleven.Network
                 Photon.Realtime.DisconnectCause.None => DisconnectCause.None,
                 Photon.Realtime.DisconnectCause.ServerTimeout or
                 Photon.Realtime.DisconnectCause.ClientTimeout => DisconnectCause.Timeout,
-                _ => DisconnectCause.Exception,
+                _ => DisconnectCause.ExceptionOccurred,
             };
 
             OnDisconnectedSubject.OnNext(cause);
