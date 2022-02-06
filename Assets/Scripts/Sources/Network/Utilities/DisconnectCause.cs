@@ -8,6 +8,6 @@ namespace MatoApp.Eleven.Network
         None,
         ExceptionOccurred,
         Timeout,
-        MaxUserReached,
+        MaxUsersReached,
     }
 }
